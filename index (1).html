@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Golden Years Charity Organisation - Supporting elderly citizens in Massachusetts with dignity, care, and financial assistance programs.">
+    <title>Golden Years Charity - Supporting Elderly Citizens</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e3a8a;
+            --light-blue: #3b82f6;
+            --accent-gold: #f59e0b;
+            --accent-green: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* ============= HEADER & NAVIGATION ============= */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .logo-text {
+            display: flex;
+            gap: 3px;
+        }
+
+        .logo-text .golden { color: var(--accent-gold); }
+        .logo-text .years { color: var(--white); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+
+        /* ============= HERO SECTION ============= */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 50%, #2563eb 100%);
+            color: var(--white);
+            padding: 100px 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero h1 .highlight { color: var(--accent-gold); }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
+        }
+
+        /* ============= APPLY SECTION ============= */
+        .apply-section {
+            background: var(--bg-light);
+            padding: 100px 2rem;
+            text-align: center;
+        }
+
+        .apply-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3.5rem;
+            border-radius: 20px;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .apply-card h2 {
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .apply-card p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        /* ============= FEATURES ============= */
+        .features {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 2rem;
+        }
+
+        .features-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .features-title h2 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .features-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--light-blue);
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(30, 58, 138, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* ============= FORM ============= */
+        .form-container {
+            background: var(--white);
+            max-width: 500px;
+            margin: 80px auto;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group { 
+            margin-bottom: 1.5rem; 
+        }
+
+        .form-group label { 
+            display: block; 
+            margin-bottom: 0.5rem; 
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%; 
+            padding: 12px; 
+            border: 2px solid #e5e7eb; 
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%; 
+            padding: 14px; 
+            background: var(--accent-gold); 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        /* ============= FOOTER ============= */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .footer-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .features-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .apply-card {
+                padding: 2rem;
+            }
+
+            .form-container {
+                margin: 60px 1rem;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <span>🏆</span>
+                <div class="logo-text">
+                    <span class="golden">Golden</span><span class="years">Years</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#apply">Apply</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Support <span class="highlight">Senior Citizens</span> in Massachusetts</h1>
+            <p>Golden Years Charity Organisation is dedicated to providing financial assistance and support to elderly members of our community across Massachusetts, United States.</p>
+            <div class="hero-buttons">
+                <a href="#apply" class="btn btn-primary">📝 Start Application</a>
+                <a href="https://www.facebook.com/share/1ACRqiA6WB/?mibextid=wwXIfr" class="btn btn-secondary" target="_blank">👍 Follow Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="about">
+        <div class="features-title">
+            <h2>What We Do in Massachusetts</h2>
+            <p>Serving the elderly population of Massachusetts, United States with dedicated care programs.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Financial Assistance</h3>
+                <p>We provide grants to eligible senior citizens with limited financial resources to help with essential needs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">❤️</div>
+                <h3>Compassionate Care</h3>
+                <p>Our team provides personalized support tailored to the unique health and social needs of seniors.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Community Connection</h3>
+                <p>We reduce isolation by fostering meaningful volunteer connections within the local community.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="apply-section" id="apply">
+        <div class="apply-card">
+            <h2>Apply for Grant Support</h2>
+            <p>If you are a senior resident of Massachusetts, United States, or know someone who needs help, you can apply through our official portal. We provide grants for medical care and essential living expenses.</p>
+            <a href="https://www.facebook.com/share/1ACRqiA6WB/?mibextid=wwXIfr" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;" target="_blank">
+                Apply via Facebook Now
+            </a>
+        </div>
+    </section>
+
+    <section class="form-container" id="contact">
+        <h2>General Inquiries</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="name@email.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" required placeholder="How can we help you today?"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p><strong>Golden Years Charity Organisation</strong></p>
+        <p>Nurturing and Enriching Lives in Massachusetts, United States</p>
+        <div class="footer-links">
+            <a href="mailto:info.goldencharity.org@gmail.com">📧 Email Us</a>
+            <a href="https://www.facebook.com/share/1ACRqiA6WB/?mibextid=wwXIfr" target="_blank">👍 Facebook</a>
+        </div>
+        <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">&copy; 2026 Golden Years Charity Organisation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const mailtoLink = `mailto:info.goldencharity.org@gmail.com?subject=Golden Years Inquiry from ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+            
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
