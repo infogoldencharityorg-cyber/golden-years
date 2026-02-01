@@ -3,489 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Golden Years Charity Organisation - Supporting elderly citizens in Massachusetts with dignity, care, and financial assistance programs.">
     <title>Golden Years Charity - Supporting Elderly Citizens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-blue: #1e3a8a;
-            --light-blue: #3b82f6;
-            --accent-gold: #f59e0b;
-            --accent-green: #10b981;
-            --text-dark: #1f2937;
-            --text-light: #4b5563;
-            --bg-light: #f9fafb;
+            --navy: #162447;
+            --gold: #FFB800;
+            --light-gray: #F4F7F9;
+            --text-main: #333;
             --white: #ffffff;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
             line-height: 1.6;
-            background: var(--white);
+            background: linear-gradient(180deg, #FFFFFF 0%, #E8EEF2 100%);
         }
 
-        /* ============= HEADER & NAVIGATION ============= */
+        /* ============= HEADER ============= */
         header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.1);
-        }
-
-        nav {
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 24px;
-            font-weight: 800;
-        }
+        .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+        .logo-text h2 { font-size: 1.1rem; color: var(--navy); margin: 0; font-family: 'Playfair Display', serif; }
+        .logo-text p { font-size: 0.75rem; color: #666; margin: 0; }
 
-        .logo-text {
-            display: flex;
-            gap: 3px;
-        }
-
-        .logo-text .golden { color: var(--accent-gold); }
-        .logo-text .years { color: var(--white); }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover { color: var(--accent-gold); }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-        }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-weight: 600; font-size: 0.9rem; }
 
         /* ============= HERO SECTION ============= */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 50%, #2563eb 100%);
-            color: var(--white);
-            padding: 100px 2rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-        }
-
-        .hero h1 .highlight { color: var(--accent-gold); }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 14px 32px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: var(--accent-gold);
-            color: var(--primary-blue);
-            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
-        }
-
-        .btn-secondary {
-            background: var(--white);
-            color: var(--primary-blue);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
-        }
-
-        /* ============= APPLY SECTION ============= */
-        .apply-section {
-            background: var(--bg-light);
-            padding: 100px 2rem;
-            text-align: center;
-        }
-
-        .apply-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 3.5rem;
+        .hero { padding: 80px 5% 40px; text-align: left; max-width: 900px; }
+        .badge {
+            display: inline-block;
+            background: white;
+            padding: 6px 15px;
             border-radius: 20px;
-            border: 3px solid var(--accent-gold);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-
-        .apply-card h2 {
-            color: var(--primary-blue);
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .apply-card p {
-            font-size: 1.15rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-        }
-
-        /* ============= FEATURES ============= */
-        .features {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 2rem;
-        }
-
-        .features-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .features-title h2 {
-            color: var(--primary-blue);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .features-title p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--light-blue);
-            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(30, 58, 138, 0.15);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            color: var(--primary-blue);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
-
-        /* ============= FORM ============= */
-        .form-container {
-            background: var(--white);
-            max-width: 500px;
-            margin: 80px auto;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.1);
-        }
-
-        .form-container h2 {
-            text-align: center;
-            color: var(--primary-blue);
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-        }
-
-        .form-group { 
-            margin-bottom: 1.5rem; 
-        }
-
-        .form-group label { 
-            display: block; 
-            margin-bottom: 0.5rem; 
+            font-size: 0.85rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            border: 1px solid #eee;
             font-weight: 600;
-            color: var(--text-dark);
+        }
+        .badge span { color: var(--gold); margin-right: 5px; }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--navy);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .gold-text { color: var(--gold); }
+        .hero-desc { font-size: 1.2rem; color: #666; margin-bottom: 40px; max-width: 650px; }
+
+        .btn-stack { display: flex; flex-direction: column; gap: 15px; max-width: 450px; }
+        .btn-navy {
+            background: var(--navy); color: white; text-decoration: none; padding: 18px 30px;
+            border-radius: 35px; text-align: center; font-weight: bold; display: flex;
+            justify-content: center; align-items: center; gap: 10px; transition: 0.3s;
+        }
+        .btn-outline {
+            background: white; border: 1.5px solid var(--navy); color: var(--navy);
+            text-decoration: none; padding: 18px 30px; border-radius: 35px; text-align: center; font-weight: 600;
+        }
+        .btn-navy:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(22,36,71,0.2); }
+
+        /* ============= STATS SECTION ============= */
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 20px 5%; margin-bottom: 60px;
+        }
+        .stat-card { background: white; padding: 25px; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .stat-card span { font-size: 1.5rem; display: block; margin-bottom: 10px; }
+        .stat-card p { font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-card h3 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); }
+
+        /* ============= ABOUT SECTION ============= */
+        .about-section { padding: 80px 5%; background: var(--white); }
+        .about-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+        .about-content h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--navy); margin-bottom: 20px; }
+        .about-content p { font-size: 1.1rem; color: #555; margin-bottom: 15px; text-align: justify; }
+
+        /* ============= IMPACT SECTION ============= */
+        .impact-section { padding: 80px 5%; background: rgba(255,255,255,0.7); border-radius: 50px 50px 0 0; }
+        .impact-header { margin-bottom: 40px; text-align: center; }
+        .impact-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--navy); }
+        .impact-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
+        .impact-card { background: white; border-radius: 25px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .impact-card img { width: 100%; height: 250px; object-fit: cover; }
+        .impact-content { padding: 25px; }
+        .impact-content h4 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 8px; }
+
+        /* ============= CONTACT SECTION ============= */
+        .contact-section { padding: 80px 5%; max-width: 800px; margin: 0 auto; }
+        .form-box { background: white; padding: 40px; border-radius: 30px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--navy); }
+        .input-group input, .input-group textarea {
+            width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem; background: #fafafa;
         }
 
-        .form-group input, 
-        .form-group textarea {
-            width: 100%; 
-            padding: 12px; 
-            border: 2px solid #e5e7eb; 
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--light-blue);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-submit {
-            width: 100%; 
-            padding: 14px; 
-            background: var(--accent-gold); 
-            color: white; 
-            border: none; 
-            border-radius: 8px; 
-            font-weight: 600; 
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
-        }
-
-        /* ============= FOOTER ============= */
-        footer {
-            background: var(--primary-blue);
-            color: var(--white);
-            text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 60px;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-        }
-
-        .footer-links {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            opacity: 0.8;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .features-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .apply-card {
-                padding: 2rem;
-            }
-
-            .form-container {
-                margin: 60px 1rem;
-                padding: 2rem;
-            }
+        /* Responsive */
+        @media (min-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(4, 1fr); }
+            .btn-stack { flex-direction: row; max-width: 100%; }
+            .impact-grid { grid-template-columns: repeat(3, 1fr); }
+            .about-container { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <nav>
-            <div class="logo">
-                <span>🏆</span>
-                <div class="logo-text">
-                    <span class="golden">Golden</span><span class="years">Years</span>
-                </div>
+        <a href="#" class="logo-area">
+            <img src="https://via.placeholder.com/100" alt="Golden Years Logo" class="logo-img">
+            <div class="logo-text">
+                <h2>Golden Years</h2>
+                <p>Charity Organisation</p>
             </div>
+        </a>
+        <nav>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#apply">Apply</a></li>
+                <li><a href="#impact">Impact</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Support <span class="highlight">Senior Citizens</span> in Massachusetts</h1>
-            <p>Golden Years Charity Organisation is dedicated to providing financial assistance and support to elderly members of our community across Massachusetts, United States.</p>
-            <div class="hero-buttons">
-                <a href="#apply" class="btn btn-primary">📝 Start Application</a>
-                <a href="https://www.facebook.com/share/1ACRqiA6WB/?mibextid=wwXIfr" class="btn btn-secondary" target="_blank">👍 Follow Us</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="features" id="about">
-        <div class="features-title">
-            <h2>What We Do in Massachusetts</h2>
-            <p>Serving the elderly population of Massachusetts, United States with dedicated care programs.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Financial Assistance</h3>
-                <p>We provide grants to eligible senior citizens with limited financial resources to help with essential needs.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">❤️</div>
-                <h3>Compassionate Care</h3>
-                <p>Our team provides personalized support tailored to the unique health and social needs of seniors.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤝</div>
-                <h3>Community Connection</h3>
-                <p>We reduce isolation by fostering meaningful volunteer connections within the local community.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="apply-section" id="apply">
-        <div class="apply-card">
-            <h2>Apply for Grant Support</h2>
-            <p>If you are a senior resident of Massachusetts, United States, or know someone who needs help, you can apply through our official portal. We provide grants for medical care and essential living expenses.</p>
-            <a href="https://www.facebook.com/share/1ACRqiA6WB/?mibextid=wwXIfr" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;" target="_blank">
-                Apply via Facebook Now
+    <section class="hero">
+        <div class="badge"><span>●</span> Supporting senior citizens with dignity</div>
+        <h1>Support <span class="gold-text">Senior Citizens</span> with dignity.</h1>
+        <p class="hero-desc">We provide financial grants and compassionate support to help our elders live comfortably and independently.</p>
+        
+        <div class="btn-stack">
+            <a href="https://www.facebook.com/share/1BpKtQnA78/?mibextid=" class="btn-navy" target="_blank">
+                <strong>Apply for grants</strong> <span>→</span>
             </a>
+            <a href="#impact" class="btn-outline">Follow our stories</a>
         </div>
     </section>
 
-    <section class="form-container" id="contact">
-        <h2>General Inquiries</h2>
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" required placeholder="Enter your full name">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span>👥</span>
+            <p>Seniors supported</p>
+            <h3>1,240+</h3>
+        </div>
+        <div class="stat-card">
+            <span>💰</span>
+            <p>Grants facilitated</p>
+            <h3>$310k+</h3>
+        </div>
+        <div class="stat-card">
+            <span>📅</span>
+            <p>Community visits</p>
+            <h3>90+</h3>
+        </div>
+        <div class="stat-card">
+            <span>🛡️</span>
+            <p>Trusted partners</p>
+            <h3>35+</h3>
+        </div>
+    </div>
+
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=600&q=80" alt="Elderly Community Support" style="width: 100%; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
             </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" required placeholder="name@email.com">
+            <div class="about-content">
+                <div class="badge" style="background: rgba(255,184,0,0.1); color: var(--navy);">Our Commitment</div>
+                <h2>Nurturing & Enriching Lives</h2>
+                <p>We are thrilled to announce that the <strong>Golden Years Charity</strong> is actively distributing grants to senior citizens within our community. This initiative is born from our firm belief that every elder deserves respect, care, and financial peace of mind.</p>
+                <p>Our mission focuses on those with limited resources, ensuring that assistance reaches those in greatest need. By collaborating with local organizations, we aim to make a lasting impact on the dignity and comfort of our elderly residents.</p>
             </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" required placeholder="How can we help you today?"></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send Message</button>
-        </form>
+        </div>
     </section>
 
-    <footer>
-        <p><strong>Golden Years Charity Organisation</strong></p>
-        <p>Nurturing and Enriching Lives in Massachusetts, United States</p>
-        <div class="footer-links">
-            <a href="mailto:info.goldencharity.org@gmail.com">📧 Email Us</a>
-            <a href="https://www.facebook.com/share/1ACRqiA6WB/?mibextid=wwXIfr" target="_blank">👍 Facebook</a>
+    <section class="impact-section" id="impact">
+        <div class="impact-header">
+            <h2>Your support becomes real help.</h2>
+            <p>Helping seniors feel safe through medical and housing assistance.</p>
         </div>
-        <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">&copy; 2026 Golden Years Charity Organisation. All rights reserved.</p>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <img src="https://images.unsplash.com/photo-1581578731522-745d05db9ad2?auto=format&fit=crop&w=500&q=80" alt="Financial Grant Support">
+                <div class="impact-content">
+                    <h4>Financial grants</h4>
+                    <p>Direct assistance for medical bills, housing, and essential costs.</p>
+                </div>
+            </div>
+
+            <div class="impact-card">
+                <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=500&q=80" alt="Care Advocacy">
+                <div class="impact-content">
+                    <h4>Care advocacy</h4>
+                    <p>Connecting seniors to essential health and legal support systems.</p>
+                </div>
+            </div>
+
+            <div class="impact-card">
+                <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=500&q=80" alt="Social Inclusion">
+                <div class="impact-content">
+                    <h4>Social inclusion</h4>
+                    <p>Fighting loneliness through connection programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="badge" style="margin-bottom: 10px;">● Get in touch</div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--navy); margin-bottom: 30px;">Send us a message</h2>
+
+        <div class="form-box">
+            <form id="contactForm">
+                <div class="input-group">
+                    <label>Your Name</label>
+                    <input type="text" id="userName" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="userEmail" placeholder="email@address.com" required>
+                </div>
+                <div class="input-group">
+                    <label>How can we help?</label>
+                    <textarea id="userMessage" rows="5" placeholder="Message..." required></textarea>
+                </div>
+                <button type="submit" class="btn-navy" style="width: 100%; border: none; cursor: pointer;">
+                    Send message <span>→</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="background: var(--navy); color: white; padding: 40px 5%; text-align: center;">
+        <p style="font-weight: bold; margin-bottom: 10px;">Golden Years Charity Organisation</p>
+        <p style="font-size: 0.85rem; opacity: 0.7;">© 2026 Golden Years. All rights reserved.</p>
+        <div style="margin-top: 15px;">
+            <a href="mailto:info.goldencharity.org@gmail.com" style="color: var(--gold); text-decoration: none; font-size: 0.9rem;">info.goldencharity.org@gmail.com</a>
+        </div>
     </footer>
 
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            const mailtoLink = `mailto:info.goldencharity.org@gmail.com?subject=Golden Years Inquiry from ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
-            
-            window.location.href = mailtoLink;
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const message = document.getElementById('userMessage').value;
+            const recipient = "info.goldencharity.org@gmail.com";
+            const subject = encodeURIComponent(`Message from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`);
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
         });
     </script>
 </body>
